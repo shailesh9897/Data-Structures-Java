@@ -101,7 +101,7 @@ public class SingleLinkedListInsertMethods {
 		
 		/* OUTPUT
 		 *
-		 * 10-->20-->30-->40-->null
+		 * 10-->20-->30-->null
 		 * Time complexity of display method - O(n)
 		 * Space complexity of display method - O(1)
 		 * 
@@ -109,6 +109,14 @@ public class SingleLinkedListInsertMethods {
 		 * Length is 4
 		 * Time complexity of length method is O(n)
 		 * Space complexity of length method is O(1)
+		 * 
+		 * Time complexity of insertFirst method is O(1)
+
+		    Space complexity of insertFirst method is O(1)
+		    
+		    Time complexity of insertLast method is O(n)
+
+			Space complexity of insertLast method is O(1)
 		 * 
 		 * 
 		 * 
