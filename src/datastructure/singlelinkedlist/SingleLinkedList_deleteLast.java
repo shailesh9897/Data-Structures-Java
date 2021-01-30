@@ -1,6 +1,8 @@
 package datastructure.singlelinkedlist;
 
-public class SingleLinkedList {
+import datastructure.singlelinkedlist.SingleLinkedList_insertAt.ListNode;
+
+public class SingleLinkedList_deleteLast {
 	
 	private ListNode head;
 	public static class ListNode{
@@ -11,7 +13,7 @@ public class SingleLinkedList {
 			this.next=null;
 		}
 	}
-
+/*****************************************************************************************************************************/
 	/*
 	Display function
 	*/public void display() {
@@ -44,9 +46,38 @@ public class SingleLinkedList {
 		return counter;
 		
 	}
+	
+	/*****************************************************************************************************************************/
+	
+	
+	public void deleteLast()
+	{
+		
+		if(head==null)
+		{
+			return;
+		}
+		ListNode dummy=new ListNode(-1);
+		dummy.next=head;
+		ListNode current=head;
+		ListNode previous=dummy;
+		while(current.next!=null)
+		{
+			previous=current;
+			current=current.next;
+		}
+		previous.next=null;
+		head=dummy.next;
+		
+		
+		
+		
+		
+	}
+	
 	public static void main(String[] args) {
 		
-		SingleLinkedList sll=new SingleLinkedList();
+		SingleLinkedList_deleteLast sll=new SingleLinkedList_deleteLast();
 		sll.head=null;
 		ListNode node1=new ListNode(10);
 		ListNode node2=new ListNode(20);
@@ -60,6 +91,13 @@ public class SingleLinkedList {
 		
 		sll.display();
 		System.out.println("\nLength = "+sll.length());
+		
+		
+		/***calling deleteLast method***/
+		sll.deleteLast();
+		
+		sll.display();
+		
 	}
 
 }

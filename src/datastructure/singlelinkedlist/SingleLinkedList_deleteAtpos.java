@@ -1,6 +1,6 @@
 package datastructure.singlelinkedlist;
 
-public class SingleLinkedList {
+public class SingleLinkedList_deleteAtpos {
 	
 	private ListNode head;
 	public static class ListNode{
@@ -11,7 +11,7 @@ public class SingleLinkedList {
 			this.next=null;
 		}
 	}
-
+/*****************************************************************************************************************************/
 	/*
 	Display function
 	*/public void display() {
@@ -44,9 +44,43 @@ public class SingleLinkedList {
 		return counter;
 		
 	}
+	
+	/*****************************************************************************************************************************/
+	
+	
+	public void deleteAtpos(int index)
+	{
+		
+		if(head==null)
+		{
+			return;
+		}
+		ListNode dummy=new ListNode(-1);
+		dummy.next=head;
+		
+		ListNode current=head;
+		ListNode previous=dummy;
+		int counter=1;
+		while(counter!=index&&current!=null)
+		{
+			counter++;
+			previous=current;
+			current=current.next;
+		}
+		if(current==null)
+		{
+			return;
+		}
+		else{
+			previous.next=current.next;
+			current=current.next;
+		}
+		head=dummy.next;
+	}
+	
 	public static void main(String[] args) {
 		
-		SingleLinkedList sll=new SingleLinkedList();
+		SingleLinkedList_deleteAtpos sll=new SingleLinkedList_deleteAtpos();
 		sll.head=null;
 		ListNode node1=new ListNode(10);
 		ListNode node2=new ListNode(20);
@@ -60,6 +94,13 @@ public class SingleLinkedList {
 		
 		sll.display();
 		System.out.println("\nLength = "+sll.length());
+		
+		
+		/***calling deleteApos method***/
+		sll.deleteAtpos(3);
+		
+		sll.display();
+		
 	}
 
 }

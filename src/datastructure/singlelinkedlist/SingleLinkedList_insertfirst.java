@@ -1,6 +1,6 @@
 package datastructure.singlelinkedlist;
 
-public class SingleLinkedList {
+public class SingleLinkedList_insertfirst {
 	
 	private ListNode head;
 	public static class ListNode{
@@ -11,7 +11,7 @@ public class SingleLinkedList {
 			this.next=null;
 		}
 	}
-
+/*****************************************************************************************************************************/
 	/*
 	Display function
 	*/public void display() {
@@ -44,9 +44,25 @@ public class SingleLinkedList {
 		return counter;
 		
 	}
+	
+	/*****************************************************************************************************************************/
+	
+	
+	public void insertFirst(int data)
+	{
+		ListNode newNode=new ListNode(data);
+		if(head==null)
+		{
+			return;
+		}
+		newNode.next=head;
+		head=newNode;
+		
+	}
+	
 	public static void main(String[] args) {
 		
-		SingleLinkedList sll=new SingleLinkedList();
+		SingleLinkedList_insertfirst sll=new SingleLinkedList_insertfirst();
 		sll.head=null;
 		ListNode node1=new ListNode(10);
 		ListNode node2=new ListNode(20);
@@ -60,6 +76,13 @@ public class SingleLinkedList {
 		
 		sll.display();
 		System.out.println("\nLength = "+sll.length());
+		
+		
+		/***calling insertfirst method***/
+		sll.insertFirst(100);
+		sll.insertFirst(200);
+		sll.display();
+		
 	}
 
 }
